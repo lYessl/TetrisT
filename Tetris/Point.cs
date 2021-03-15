@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tetris
 {
-    class Point
+    public class Point
     {
         public int x;
         public int y;
@@ -15,5 +15,36 @@ namespace Tetris
             Console.SetCursorPosition(x, y);
             Console.Write(c);
         }
+
+        public Point(int a, int b, char sym)
+        {
+            x = a;
+            y = b;
+            c = sym;
+        }
+
+        internal void Move(Direction dir)
+        {
+            switch (dir)
+            {
+                case Direction.DOWN:
+                    y += 1;
+                    break;
+                case Direction.LEFT:
+                    x -= 1;
+                    break;
+                case Direction.RIGHT:
+                    x += 1;
+                    break;
+            }
+        }
+
+        internal void Hide()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(" ");
+        }
+
+        public Point() { }
     }
 }
