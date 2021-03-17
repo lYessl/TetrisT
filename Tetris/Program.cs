@@ -19,7 +19,17 @@ namespace Tetris
             //    fig.Draw();
             //}
 
-            Square s = new Square(2, 5, '*');
+            Figure s = new Stick(20, 5, '*');
+            s.Draw();
+
+            Thread.Sleep(500);
+            s.Hide();
+            s.Rotate();
+            s.Draw();
+
+            Thread.Sleep(500);
+            s.Hide();
+            s.Rotate();
             s.Draw();
 
             Thread.Sleep(500);
